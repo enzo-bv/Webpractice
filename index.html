@@ -6,27 +6,49 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+
+    <!-- CSS stylesheets -->
     <link
       rel="stylesheet"
       href="./static/css/main.css"
     />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Javascript Challenges</title>
   </head>
   <body>
     <div id="challenge01" class="challenge">
       <div
         id="challengeHead01"
-        class="challengeHead"
+        class="challengeHeader"
       >
-        <h1>Challenge One!</h1>
+        <h1>Challenge One: Your Age in days</h1>
       </div>
-      <div
-        class="challegeBody01 challengeBody"
-      ></div>
+      <div class="challegeBody01 challengeBody">
+        <button
+          class="btn btn-success"
+          onclick="birthYear()"
+        >
+          Click-me
+        </button>
+        <button class="btn btn-negative">
+          Reset
+        </button>
+      </div>
       <div
         id="challengeFooter01"
         class="challengeFooter"
-      ></div>
+      >
+        <div
+          id="challengeResults01"
+          class="challengeResults"
+        ></div>
+      </div>
     </div>
     <script src="./static/js/index.js"></script>
   </body>
