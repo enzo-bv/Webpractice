@@ -12,3 +12,7 @@ function birthYear() {
     .getElementById("challengeResults01")
     .appendChild(solution);
 }
+
+function clearBox(challengeId) {
+  document.getElementById(challengeId).remove();
+}

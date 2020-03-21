@@ -13,11 +13,11 @@ body {
 }
 
 .challengeHeader {
-  border-bottom: 3px solid steelblue;
+  border-bottom: 3px dashed steelblue;
 }
 
 .challengeBody {
-  border-bottom: 3px solid steelblue;
+  border-bottom: 3px dashed steelblue;
   padding: 10px;
 }
 
