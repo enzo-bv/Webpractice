@@ -21,15 +21,37 @@ body {
   padding: 10px;
 }
 
+.challengeFooter {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+}
+
+.rpsChoice {
+  width: 150px;
+  margin: 0px 15px;
+}
+
+.rpsChoice:hover {
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
 .challengeResults {
   height: 4em;
   line-height: 4em;
   font-family: inherit;
   font-size: 2em;
   border: 2px dashed maroon;
-  max-width: 80%;
-  margin: 1em auto;
+  width: 90%;
+  margin: 0.8em auto;
 }
+.catBox {
+  margin: 5px 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
 .challengeResults > p {
   margin: 0;
 }
