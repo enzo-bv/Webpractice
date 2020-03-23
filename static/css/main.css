@@ -19,22 +19,23 @@ body {
 .challengeBody {
   border-bottom: 3px dashed steelblue;
   padding: 10px;
-}
-
-.challengeFooter {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
   justify-content: center;
 }
 
+.challengeFooter {
+  flex-wrap: wrap;
+}
+
 .rpsChoice {
   width: 150px;
-  margin: 0px 15px;
+  margin: 0px auto;
 }
 
 .rpsChoice:hover {
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0px 0px 10px steelblue);
 }
 
 .challengeResults {
@@ -54,6 +55,8 @@ body {
 
 .challengeResults > p {
   margin: 0;
+  overflow: scroll;
+  height: inherit;
 }
 
 .btn {

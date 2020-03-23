@@ -20,6 +20,11 @@
     />
 
     <title>Javascript Challenges</title>
+    <link
+      rel="shortcut icon"
+      href="./static/media/logo.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="challenge01" class="challenge">
@@ -87,29 +92,51 @@
         id="challengeHeader03"
         class="challengeHeader"
       >
-        <h2>
+        <h1>
           Challenge Three: Rock, Paper, Scissor
-        </h2>
+        </h1>
       </div>
       <div
-        id="challengeFooter03"
-        class="challengeFooter"
+        id="challengeBody03"
+        class="challengeBody"
       >
         <img
           src="./static/media/Paper.png"
           alt="Paper"
           class="rpsChoice"
+          id="paperChoice"
+          type="button"
+          onclick="rpsUserChoice('paper')"
         />
         <img
           src="./static/media/Rock.png"
           alt="Rock"
           class="rpsChoice"
+          id="rockChoice"
+          ;
+          type="button"
+          onclick="rpsUserChoice('rock')"
         />
         <img
           src="./static/media/Scissor.png"
           alt="Scissor"
           class="rpsChoice"
+          id="scissorChoice"
+          ;
+          type="button"
+          onclick="rpsUserChoice('scissor')"
         />
+      </div>
+      <div
+        id="challengeFooter03"
+        class="challengeFooter"
+      >
+        <div
+          id="challengeResults03"
+          class="challengeResults"
+        >
+          <p id="rpsFinal"></p>
+        </div>
       </div>
     </div>
     <script src="./static/js/index.js"></script>
