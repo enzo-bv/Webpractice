@@ -3,21 +3,48 @@ body {
   text-align: center;
 }
 
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-toggler {
+  object-fit: cover;
+  max-width: 45px;
+  max-height: 45px;
+  background-color: #22d466;
+  background-image: linear-gradient(
+    60deg,
+    #22d466 10%,
+    #90d4aa 80%
+  );
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 0px solid transparent;
+}
+
+div > img {
+  max-width: inherit;
+  max-width: inherit;
+}
+
 .challenge {
   width: 80vw;
   margin: 5px auto;
   border-style: solid;
   border-width: 3px;
-  border-color: steelblue;
+  border-color: #19bf59;
   border-radius: 5px;
 }
 
 .challengeHeader {
-  border-bottom: 3px dashed steelblue;
+  border-bottom: 3px dashed;
+  border-color: inherit;
 }
 
 .challengeBody {
-  border-bottom: 3px dashed steelblue;
+  border-bottom: 3px dashed;
+  border-color: inherit;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +70,7 @@ body {
   line-height: 4em;
   font-family: inherit;
   font-size: 2em;
-  border: 2px dashed maroon;
+  border: 2px dashed #800000;
   width: 90%;
   margin: 0.8em auto;
 }
@@ -64,17 +91,57 @@ body {
   margin: 2px 0.5em;
   font-size: 1em;
   background-image: none;
-  border-radius: 1em;
+  border-radius: 1.2em;
   border: none;
   padding: 0.5em 1.4em;
   width: 10em;
   max-width: 80%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .btn-success {
-  background-color: lightseagreen;
+  background-image: linear-gradient(
+    60deg,
+    #196fbf,
+    #6bbfd6
+  );
+  color: #fff;
 }
 
 .btn-negative {
-  background-color: tomato;
+  background-color: #ff6347;
+  background-image: linear-gradient(
+    60deg,
+    #bf2a2a,
+    #ff6347
+  );
+  color: #fff;
+}
+
+.rippleEffect {
+  position: absolute;
+  background: white;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: rippleAnimation 1s linear 1;
+}
+
+@keyframes rippleAnimation {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+
+  90% {
+    width: 475px;
+    height: 475px;
+  }
+
+  100% {
+    width: 500px;
+    height: 500px;
+    background: transparent;
+  }
 }

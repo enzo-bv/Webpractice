@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1.1"
     />
 
     <!-- CSS stylesheets -->
@@ -27,118 +27,163 @@
     />
   </head>
   <body>
-    <div id="challenge01" class="challenge">
-      <div
-        id="challengeHead01"
-        class="challengeHeader"
-      >
-        <h1>Challenge One: Your Age in days</h1>
-      </div>
-      <div class="challegeBody01 challengeBody">
-        <button
-          class="btn btn-success"
-          onclick="birthYear()"
-        >
-          Click-me
-        </button>
-        <button
-          class="btn btn-negative"
-          onclick="clearBox('ageInDays')"
-        >
-          Reset
-        </button>
-      </div>
-      <div
-        id="challengeFooter01"
-        class="challengeFooter"
-      >
+    <div id="challengesCompilation">
+      <div id="challenge01" class="challenge">
         <div
-          id="challengeResults01"
-          class="challengeResults"
+          id="challengeHead01"
+          class="challengeHeader"
+        >
+          <h1>Challenge One: Your Age in days</h1>
+        </div>
+        <div
+          id="challegeBody01"
+          class="challengeBody"
+        >
+          <button
+            class="btn btn-success"
+            onclick="birthYear()"
+          >
+            Click-me
+          </button>
+          <button
+            class="btn btn-negative"
+            onclick="clearBox('ageInDays')"
+          >
+            Reset
+          </button>
+        </div>
+        <div
+          id="challengeFooter01"
+          class="challengeFooter"
+        >
+          <div
+            id="challengeResults01"
+            class="challengeResults"
+          ></div>
+        </div>
+      </div>
+      <div id="challenge02" class="challenge">
+        <div
+          id="challengeHeader02"
+          class="challengeHeader"
+        >
+          <h1>Challenge Two: Cat Generator</h1>
+        </div>
+        <div
+          id="challengeBody02"
+          class="challengeBody"
+        >
+          <button
+            class="btn btn-success"
+            onclick="makeCats()"
+          >
+            Generate!
+          </button>
+          <button
+            class="btn btn-negative"
+            onclick="clearCats()"
+          >
+            Clear
+          </button>
+        </div>
+        <div
+          id="challengeFooter02"
+          class="challengeFooter"
         ></div>
       </div>
-    </div>
-    <div id="challenge02" class="challenge">
-      <div
-        id="challengeHeader02"
-        class="challengeHeader"
-      >
-        <h1>Challenge Two: Cat Generator</h1>
-      </div>
-      <div
-        id="challengeBody02"
-        class="challengeBody"
-      >
-        <button
-          class="btn btn-success"
-          onclick="makeCats()"
-        >
-          Generate!
-        </button>
-        <button
-          class="btn btn-negative"
-          onclick="clearCats()"
-        >
-          Clear
-        </button>
-      </div>
-      <div
-        id="challengeFooter02"
-        class="challengeFooter"
-      ></div>
-    </div>
-    <div id="challenge03" class="challenge">
-      <div
-        id="challengeHeader03"
-        class="challengeHeader"
-      >
-        <h1>
-          Challenge Three: Rock, Paper, Scissor
-        </h1>
-      </div>
-      <div
-        id="challengeBody03"
-        class="challengeBody"
-      >
-        <img
-          src="./static/media/Paper.png"
-          alt="Paper"
-          class="rpsChoice"
-          id="paperChoice"
-          type="button"
-          onclick="rpsUserChoice('paper')"
-        />
-        <img
-          src="./static/media/Rock.png"
-          alt="Rock"
-          class="rpsChoice"
-          id="rockChoice"
-          ;
-          type="button"
-          onclick="rpsUserChoice('rock')"
-        />
-        <img
-          src="./static/media/Scissor.png"
-          alt="Scissor"
-          class="rpsChoice"
-          id="scissorChoice"
-          ;
-          type="button"
-          onclick="rpsUserChoice('scissor')"
-        />
-      </div>
-      <div
-        id="challengeFooter03"
-        class="challengeFooter"
-      >
+      <div id="challenge03" class="challenge">
         <div
-          id="challengeResults03"
-          class="challengeResults"
+          id="challengeHeader03"
+          class="challengeHeader"
         >
-          <p id="rpsFinal"></p>
+          <h1>
+            Challenge Three: Rock, Paper, Scissor
+          </h1>
+        </div>
+        <div
+          id="challengeBody03"
+          class="challengeBody"
+        >
+          <img
+            src="./static/media/Paper.png"
+            alt="Paper"
+            class="rpsChoice"
+            id="paperChoice"
+            type="button"
+            onclick="rpsUserChoice('paper')"
+          />
+          <img
+            src="./static/media/Rock.png"
+            alt="Rock"
+            class="rpsChoice"
+            id="rockChoice"
+            ;
+            type="button"
+            onclick="rpsUserChoice('rock')"
+          />
+          <img
+            src="./static/media/Scissor.png"
+            alt="Scissor"
+            class="rpsChoice"
+            id="scissorChoice"
+            ;
+            type="button"
+            onclick="rpsUserChoice('scissor')"
+          />
+        </div>
+        <div
+          id="challengeFooter03"
+          class="challengeFooter"
+        >
+          <div
+            id="challengeResults03"
+            class="challengeResults"
+          >
+            <p id="rpsFinal"></p>
+          </div>
         </div>
       </div>
     </div>
     <script src="./static/js/index.js"></script>
+    <script>
+      const buttons = document.querySelectorAll(
+        ".btn"
+      );
+      const btnsArray = [...buttons];
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function(
+          e
+        ) {
+          const xLocal =
+            e.clientX - e.target.offsetLeft;
+          const yLocal =
+            e.clientY - e.target.offsetTop;
+
+          let ripple = document.createElement(
+            "span"
+          );
+          ripple.style.top = yLocal + "px";
+          ripple.style.left = xLocal + "px";
+          ripple.className = "rippleEffect";
+          this.appendChild(ripple);
+          setTimeout(() => {
+            ripple.remove();
+          }, 1000);
+
+          console.log(
+            this.parentNode.id +
+              " button of classes: " +
+              this.classList +
+              " was clicked in:\n" +
+              "[" +
+              xLocal +
+              "]" +
+              "[" +
+              yLocal +
+              "]"
+          );
+        });
+      });
+    </script>
   </body>
 </html>
